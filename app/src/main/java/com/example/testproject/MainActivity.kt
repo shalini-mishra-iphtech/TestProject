@@ -7,10 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
+import com.example.testproject.adapter.MyAdapter
 import com.example.testproject.fragment.LoginFragment
 import com.example.testproject.fragment.RegisterFragment
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
        // private var backPressedTime: Long = 0
         super.onCreate(savedInstanceState)
@@ -22,6 +25,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         loadFragment(LoginFragment())
+
     }
 
     fun loadFragment(fragment: Fragment) {

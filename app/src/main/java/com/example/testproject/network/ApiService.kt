@@ -1,7 +1,10 @@
 package com.example.testproject.network
 
-import android.telecom.Call
 import com.example.testproject.model.ApiResponse
+import com.example.testproject.model.MovieData
+import retrofit2.http.GET
+import retrofit2.Call
+
 
 interface ApiService {
     @GET("users?page=2")
