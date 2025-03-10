@@ -1,6 +1,7 @@
 package com.example.testproject
 
 import android.os.Bundle
+import android.widget.CheckBox
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -13,9 +14,9 @@ import com.example.testproject.fragment.LoginFragment
 import com.example.testproject.fragment.RegisterFragment
 
 class MainActivity : AppCompatActivity() {
-
+    var  backPressedTime=0
     override fun onCreate(savedInstanceState: Bundle?) {
-       // private var backPressedTime: Long = 0
+        // private var backPressedTime: Long = 0
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
@@ -37,4 +38,23 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit()
     }
+
+
+    //handling backpressed
+    override fun onBackPressed() {
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.login_container)
+
+        if (currentFragment is LoginFragment) {
+
+            if (backPressedTime + 2000 > System.currentTimeMillis()) {
+                finish()
+            } else {
+                Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show()
+                backPressedTime = System.currentTimeMillis().toInt()
+            }
+        } else {
+            super.onBackPressed()
+        }
+    }
+
 }
