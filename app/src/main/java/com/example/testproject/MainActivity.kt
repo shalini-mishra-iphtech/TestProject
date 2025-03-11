@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
                 backPressedTime = System.currentTimeMillis().toInt()
             }
         } else {
+            //deprectied method
             super.onBackPressed()
         }
     }
