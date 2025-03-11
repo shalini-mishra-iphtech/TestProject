@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
 }
-
 android {
     namespace = "com.example.testproject"
     compileSdk = 35
@@ -49,6 +48,16 @@ dependencies {
     implementation (libs.androidx.recyclerview)
     implementation (libs.glide)
     annotationProcessor (libs.compiler)
+
+
+        implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+        implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
+        implementation("com.squareup.retrofit2:retrofit:2.9.0")
+        implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+        implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
+
+
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
