@@ -1,16 +1,18 @@
 package com.example.testproject
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.testproject.repository.PostRepository
+import com.example.testproject.model.Post
+import com.example.testproject.network.RetrofitClient
 import com.example.testproject.utils.SharedPrefManager
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var viewModel: MainViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,15 +23,12 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val sharedPrefManager=SharedPrefManager(this)
-        val repository=PostRepository(sharedPrefManager)
-        viewModel=MainViewModel(repository)
+        // val sharedPrefManager=SharedPrefManager(this)
+        //  val repository=PostRepository(sharedPrefManager)
 
-        viewModel.fetchPosts()
+        fetchPosts()
 
     }
-
-
 
 
 
