@@ -16,10 +16,10 @@ class PostAdapter (private val PostList:List<Post>):RecyclerView.Adapter<PostAda
 
     override fun onBindViewHolder(holder: PostAdapter.PostViewHolder, position: Int) {
       val post=PostList[position]
-        holder.userId.text= post.userId.toString()
-        holder.ID.text= post.id.toString()
-        holder.Title.text=post.title
-        holder.Body.text=post.body
+        holder.userId.text= "UserId: ${post.userId.toString()}"
+        holder.ID.text= "Id: ${post.id.toString()}"
+        holder.Title.text="Title: ${post.title}"
+        holder.Body.text="Body: ${post.body}"
         holder.Body.maxLines=1
         holder.Body.ellipsize=android.text.TextUtils.TruncateAt.END
 
