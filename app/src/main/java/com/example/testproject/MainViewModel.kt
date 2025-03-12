@@ -7,11 +7,11 @@ import com.example.testproject.repository.PostRepository
 import kotlinx.coroutines.launch
 
 class MainViewModel(context: MainActivity):ViewModel() {
-
     /*
     fun fetchPosts(){
         viewModelScope.launch {
             val posts=repository.fetchPosts()
+
         }
     }
     */
